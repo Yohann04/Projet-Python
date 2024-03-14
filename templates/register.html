@@ -4,22 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Page de connexion</title>
+    <title>Inscription</title>
 </head>
 <body>
-    <div class="container">
-        {% if error %}
-    <p style="color: red;">{{ error }}</p>
-        {% endif %}
-    <form method="POST" action="{{ url_for('login') }}">
+    <h1>Inscription</h1>
+    <form method="POST" action="{{ url_for('register') }}">
         <p><label for="username">Nom d'utilisateur:</label>
         <input type="text" id="username" name="username" required></p>
         <p><label for="password">Mot de passe:</label>
         <input type="password" id="password" name="password" required></p>
-        <p class="bottom"><input type="submit" id="connexion" value="Se connecter">
+        <p><input type="submit" value="S'inscrire"></p>
     </form>
-    <a id="register" value="Se Créer un profil" href="register">Créer un profil</p>
-    </div>  
-
+    <p>Déjà inscrit ? <a href="{{ url_for('login') }}">Connectez-vous ici</a>.</p>
 </body>
 </html>

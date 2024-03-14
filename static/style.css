@@ -13,8 +13,7 @@ body {
 }
 
 input[type="text"],
-input[type="password"],
-button {
+input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -23,13 +22,19 @@ button {
     border-radius: 3px;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+.bottom {
+    display: flex;
+    flex-direction: column;
 }
 
-button:hover {
-    background-color: #45a049;
+#connexion {
+    padding: 5px;
+    margin: 5px;
+}
+
+#register {
+    margin: 5px;
+    text-align: center;
+    align-items: center;
+    width: auto;
 }
