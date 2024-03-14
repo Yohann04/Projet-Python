@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Page de connexion</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Connexion</h1>
+        <form method="POST" action="{{ url_for('login') }}">
+            <p>{{ form.username.label }}<br>{{ form.username }}</p>
+            <p>{{ form.password.label }}<br>{{ form.password }}</p>
+            <p>{{ form.submit }}</p>
+        </form>
+    </div>  
+
+</body>
+</html>
