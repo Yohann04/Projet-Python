@@ -3,11 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
     <title>Document</title>
 </head>
 <body>
-    <p>HOME</p>
+    <p>HOME {{ current_user.username }}</p>
     <a href="login">Déconnexion</a>
+
+    <form method="POST" action="{{ url_for('add_note') }}">
+        <input type="text" name="content" id="content" placeholder="Écrire une nouvelle note...">
+        <button type="submit" id="submit-btn">Ajouter</button>
+    </form>
+
+    <h2>Mes Notes</h2>
+    <form method="POST" action="{{ url_for('delete_selected_notes') }}">
+        <ul>
+            {% for note in notes %}
+                <li>
+                    <input type="checkbox" name="selected_notes" value="{{ note[0] }}">
+                    {{ note[2] }}
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Supprimer les notes sélectionnées</button>
+        <input type="checkbox" id="select-all" onclick="selectAllNotes(this)">
+        <label for="select-all">Sélectionner tout</label>
+    </form>
+
+    <script>
+        // Récupérer le champ de texte et le bouton de soumission du formulaire
+        var contentInput = document.getElementById('content');
+        var submitBtn = document.getElementById('submit-btn');
+
+        // Ajouter un écouteur d'événement pour surveiller les changements dans le champ de texte
+        contentInput.addEventListener('input', function() {
+            // Vérifier si le champ de texte est vide
+            if (contentInput.value.trim() === '') {
+                // Si le champ est vide, désactiver le bouton de soumission
+                submitBtn.disabled = true;
+            } else {
+                // Sinon, activer le bouton de soumission
+                submitBtn.disabled = false;
+            }
+        });
+
+        function selectAllNotes(checkbox) {
+            var checkboxes = document.querySelectorAll('input[name="selected_notes"]');
+            checkboxes.forEach(function(cb) {
+                cb.checked = checkbox.checked;
+            });
+        }
+    </script>
+
 </body>
 </html>

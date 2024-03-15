@@ -7,7 +7,8 @@
     <title>Inscription</title>
 </head>
 <body>
-    <h1>Inscription</h1>
+    <div class="container">
+        <h1>Inscription</h1>
     <form method="POST" action="{{ url_for('register') }}">
         <p><label for="username">Nom d'utilisateur:</label>
         <input type="text" id="username" name="username" required></p>
@@ -16,5 +17,7 @@
         <p><input type="submit" value="S'inscrire"></p>
     </form>
     <p>Déjà inscrit ? <a href="{{ url_for('login') }}">Connectez-vous ici</a>.</p>
+    </div>
+    
 </body>
 </html>

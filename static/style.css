@@ -38,3 +38,18 @@ input[type="password"] {
     align-items: center;
     width: auto;
 }
+
+/* Réinitialisation des styles de liste */
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Styles spécifiques pour les éléments <li> */
+li {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}

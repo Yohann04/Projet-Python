@@ -1,0 +1,64 @@
+/* Style pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Style pour les titres */
+h2 {
+    color: #333;
+}
+
+/* Style pour les formulaires */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour les listes */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Style pour les cases à cocher */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Style pour le lien de déconnexion */
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
